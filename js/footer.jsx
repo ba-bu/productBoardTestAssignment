@@ -17,7 +17,9 @@ var app = app || {};
 				clearButton = (
 					<button
 						className="clear-completed"
-						onClick={this.props.onClearCompleted}>
+						onClick={this.props.onClearCompleted}
+						data-test={'clearCompleted'}
+					>
 						Clear completed
 					</button>
 				);
@@ -28,7 +30,7 @@ var app = app || {};
 			var nowShowing = this.props.nowShowing;
 			return (
 				<footer className="footer">
-					<span className="todo-count">
+					<span className="todo-count" data-test={'counter'}>
 						<strong>{this.props.count}</strong> {activeTodoWord} left
 					</span>
 					<ul className="filters">
@@ -43,7 +45,8 @@ var app = app || {};
 						<li>
 							<a
 								href="#/active"
-								className={cx({selected: nowShowing === app.ACTIVE_TODOS})}>
+								className={cx({selected: nowShowing === app.ACTIVE_TODOS})}
+								data-test={'activeFilter'}>
 									Active
 							</a>
 						</li>
@@ -51,7 +54,8 @@ var app = app || {};
 						<li>
 							<a
 								href="#/completed"
-								className={cx({selected: nowShowing === app.COMPLETED_TODOS})}>
+								className={cx({selected: nowShowing === app.COMPLETED_TODOS})} 
+								data-test={'completeFilter'}>
 									Completed
 							</a>
 						</li>

@@ -135,7 +135,7 @@ var app = app || {};
 							onChange={this.toggleAll}
 							checked={activeTodoCount === 0}
 						/>
-						<ul className="todo-list">
+						<ul className="todo-list" data-test={'todoList'}>
 							{todoItems}
 						</ul>
 					</section>
@@ -145,13 +145,14 @@ var app = app || {};
 			return (
 				<div>
 					<header className="header">
-						<h1>todos</h1>
+						<h1 data-test={'todoHeader'}>todos</h1>
 						<input
 							ref="newField"
 							className="new-todo"
 							placeholder="What needs to be done?"
 							onKeyDown={this.handleNewTodoKeyDown}
 							autoFocus={true}
+							data-test={'inputField'}
 						/>
 					</header>
 					{main}

@@ -78,15 +78,16 @@ var app = app || {};
 				<li className={React.addons.classSet({
 					completed: this.props.todo.completed,
 					editing: this.props.editing
-				})}>
+				})} data-test={'todoItemWrapper'}>
 					<div className="view">
 						<input
 							className="toggle"
 							type="checkbox"
 							checked={this.props.todo.completed}
 							onChange={this.props.onToggle}
+							data-test={'todoCheckbox'}
 						/>
-						<label onDoubleClick={this.handleEdit}>
+						<label onDoubleClick={this.handleEdit} data-test={'todoItem'}>
 							{this.props.todo.title}
 						</label>
 						<button className="destroy" onClick={this.props.onDestroy} />
